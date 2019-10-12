@@ -9,6 +9,25 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="gif_prompt">What do you do?</string>
+
+    <string-array name="options">
+        <item>Select Answer</item>
+        <item>2</item>
+        <item>I don not know</item>
+        <item>It depends</item>
+        <item>9</item>
+        <item>12</item>
+        <item>0</item>
+        <item>Just Skip</item>
+    </string-array>
+
+    <string-array name="options_traffic">
+        <item>Select Option</item>
+        <item>Wait for Green</item>
+        <item>Check for cops then continue</item>
+        <item>Drive faster</item>
+    </string-array>
     <string name="scenario2_1Question">You are a musician pouring out  your heart
         as you play your latest song. Mid way in your song the croud responds as below.</string>
     <string name="scenario2_1prompt">Who is at fault</string>
