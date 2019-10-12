@@ -28,4 +28,33 @@
         <item>Check for cops then continue</item>
         <item>Drive faster</item>
     </string-array>
+
+
+    <string name="scenario2_1Question">You are a musician pouring out  your heart
+        as you play your latest song. Mid way in your song the croud responds as below.</string>
+    <string name="scenario2_1prompt">Who is at fault</string>
+    <string name="scenario2_2prompt">What do would you do next</string>
+    <string name="btn2SceneAdd">Submit</string>
+
+    <string-array name="scenesecond">
+        <item>Select Box</item>
+        <item>Both</item>
+        <item>No one</item>
+        <item>The audience</item>
+        <item>Myself</item>
+        <item>None of the above</item>
+        <item>I do not know</item>
+    </string-array>
+
+    <string-array name="scenesecond_2">
+        <item>Select Box</item>
+        <item>Cry</item>
+        <item>Shout at the Audience</item>
+        <item>Leave</item>
+        <item>Continue Singing</item>
+        <item>Show them a magic trick</item>
+        <item>Laugh</item>
+    </string-array>
+
+
 </resources>
