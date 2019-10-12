@@ -49,7 +49,7 @@ public class Main2Activity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             if (v.getId()==btn_no.getId()){
-                //Do something
+                //Do something again
             }
             else{
                 //Do Something
