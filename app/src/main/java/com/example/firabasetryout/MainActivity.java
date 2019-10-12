@@ -25,10 +25,10 @@ public class MainActivity extends AppCompatActivity {
         myRef.setValue("Hello, World!");
         myRef.child("gnoewngeie").child("mary").setValue("Hello World");
 
-        Button btnLogin = findViewById(R.id.btnLogIn);
+       Button btnLogin = findViewById(R.id.btnLogIn);
 
-        ButtonClickListner buttonListen = new ButtonClickListner();
-        btnLogin.setOnClickListener(buttonListen);
+       ButtonClickListner buttonListen = new ButtonClickListner();
+       btnLogin.setOnClickListener(buttonListen);
 
     }
 
