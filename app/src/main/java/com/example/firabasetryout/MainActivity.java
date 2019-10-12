@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.scenario2_1);
+        setContentView(R.layout.activity_main);
 
         // Write a message to the database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -25,10 +25,10 @@ public class MainActivity extends AppCompatActivity {
         myRef.setValue("Hello, World!");
         myRef.child("gnoewngeie").child("mary").setValue("Hello World");
 
-//       Button btnLogin = findViewById(R.id.btnLogIn);
+       Button btnLogin = findViewById(R.id.btnLogIn);
 
-//       ButtonClickListner buttonListen = new ButtonClickListner();
-//       btnLogin.setOnClickListener(buttonListen);
+       ButtonClickListner buttonListen = new ButtonClickListner();
+       btnLogin.setOnClickListener(buttonListen);
 
     }
 

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/tvStory2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:padding="16dp"
+            android:text="@string/scenario2_1Question"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/imgScene2"
+            android:layout_width="397dp"
+            android:layout_height="329dp"
+            android:padding="20dp"
+            android:src="@drawable/booingcrowd"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvStory2"
+            app:layout_constraintVertical_bias="0.098"
+            tools:layout_editor_absoluteX="7dp"
+            tools:src="@drawable/booingcrowd" />
+
+        <Spinner
+            android:id="@+id/spnrPart1Ans"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/scenesecond"
+            android:prompt="@string/scenario2_1prompt"
+            android:spinnerMode="dialog"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgScene2"
+            app:layout_constraintVertical_bias="0.081" />
+
+        <Button
+            android:id="@+id/btnScene2Send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn2SceneAdd"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spnrPart1Ans"
+            app:layout_constraintVertical_bias="0.753" />
+
+        <Spinner
+            android:id="@+id/spinrPart2Ans"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/btnScene2Send"
+            app:layout_constraintTop_toBottomOf="@+id/spnrPart1Ans"
+            tools:layout_editor_absoluteX="1dp"
+            android:entries="@array/scenesecond_2"
+            android:prompt="@string/scenario2_2prompt"
+            android:spinnerMode="dialog"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
