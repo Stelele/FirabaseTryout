@@ -61,6 +61,7 @@ public class GameLogic extends AppCompatActivity {
      * */
     public void getMatches(){
         //Get matches after the final proceed button hav been clicked
+
     }
 
     /**
@@ -108,6 +109,9 @@ public class GameLogic extends AppCompatActivity {
                         //Toast to the display the results
                         Toast.makeText(v.getContext(), test.getMax(), Toast.LENGTH_LONG).show();
                         //Call Match
+                        //Display Results screen
+                        setContentView(R.layout.final_results);
+
                     }
                 default:
                     break;

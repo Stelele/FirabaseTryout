@@ -26,13 +26,15 @@ public class MainActivity extends AppCompatActivity {
         myRef.child("gnoewngeie").child("mary").setValue("Hello World");
 
         Button btnLogin = findViewById(R.id.btnLogIn);
+        Button btnSignUp = findViewById(R.id.btnSingUp);
 
-        ButtonClickListner buttonListen = new ButtonClickListner();
+        ButtonClickListener buttonListen = new ButtonClickListener();
         btnLogin.setOnClickListener(buttonListen);
+        btnSignUp.setOnClickListener(buttonListen);
 
     }
 
-    public class ButtonClickListner implements View.OnClickListener{
+    public class ButtonClickListener implements View.OnClickListener{
 
         @Override
         public void onClick(View v) {
