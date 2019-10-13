@@ -132,8 +132,8 @@ public class GameLogic extends AppCompatActivity {
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                 for (DataSnapshot ds : dataSnapshot.getChildren()){
                                     String word = ds.getKey();
-                                    String out = " u r " + test.getMax() + " we match at " + word;
-                                    if(word.equals(yourPersonality)){
+                                    String out = " u r " + test.getMax() + " we match at " + ds.getValue(String.class);
+                                    if(yourPersonality.equalsIgnoreCase(word)){
                                         Toast.makeText(v.getContext(),out,Toast.LENGTH_LONG).show();
                                     }
 
