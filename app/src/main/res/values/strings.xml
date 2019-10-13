@@ -10,6 +10,7 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="gif_prompt">What do you do?</string>
+    <string name="proceed">proceed</string>
     <string name="final_msg">Congratulations!!!These two mentors are your best matches the year!!!Choose your best fit!!</string>
 
     <string-array name="options">
@@ -25,7 +26,7 @@
     </string-array>
 
     <string-array name="options_traffic">
-        <item>Select Option</item>
+        <item>Select Answer</item>
         <item>Wait for Green</item>
         <item>Check for cops then continue</item>
         <item>Drive faster</item>
@@ -40,7 +41,7 @@
     <string name="btn2SceneAdd">Submit</string>
 
     <string-array name="scenesecond">
-        <item>Select Box</item>
+        <item>Select Answer</item>
         <item>Both</item>
         <item>No one</item>
         <item>The Audience</item>
@@ -50,7 +51,7 @@
     </string-array>
 
     <string-array name="scenesecond_2">
-        <item>Select Box</item>
+        <item>Select Answer</item>
         <item>Cry</item>
         <item>Shout at the Audience</item>
         <item>Leave</item>

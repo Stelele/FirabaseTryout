@@ -4,9 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -15,6 +17,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.database.core.Tag;
+
+import java.util.HashMap;
 
 public class GameLogic extends AppCompatActivity {
 
@@ -35,6 +40,12 @@ public class GameLogic extends AppCompatActivity {
      * Personality test
      * */
     PersonalityTest test;
+
+    TextView tvBox1;
+    TextView tvBox2;
+
+    Users match1[];
+//    String match2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,43 +129,83 @@ public class GameLogic extends AppCompatActivity {
 //                        Toast.makeText(v.getContext(), test.getMax(), Toast.LENGTH_LONG).show();
 
                         FirebaseDatabase database = FirebaseDatabase.getInstance();
-                        DatabaseReference myRef = database.getReference("PersonalityMatch");
+                        DatabaseReference myRef = database.getReference();
 
-                        String tempId = myRef.push().getKey();
+                        final String tempId = myRef.push().getKey();
+                        Users mentee = new Users("Sarah",test.getMax(),"Mary");
+                        myRef.child("Mentee").child(tempId).setValue(mentee);
 
-//                        myRef.child("Mentee").child(tempId).setValue("Susan");
 
-//                        Query check = myRef.child("PersonalityMatch").equalTo(test.getMax());
-//
-//                        Toast.makeText(v.getContext(),check.toString(),Toast.LENGTH_LONG).show();
-                        final String yourPersonality = test.getMax();
-                        ValueEventListener event = new ValueEventListener() {
-                            @Override
+
+
+                        myRef.child("users").orderByChild("Personality").equalTo(test.getMax()).addValueEventListener(new ValueEventListener() {
+                            int i = 0;
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                for (DataSnapshot ds : dataSnapshot.getChildren()){
-                                    String word = ds.getKey();
-                                    String out = " u r " + test.getMax() + " we match at " + ds.getValue(String.class);
-                                    if(yourPersonality.equalsIgnoreCase(word)){
-                                        Toast.makeText(v.getContext(),out,Toast.LENGTH_LONG).show();
-                                    }
+                                match1 = new Users[2];
+                                String values[] = new String[2];
 
+
+
+                                for(DataSnapshot ds : dataSnapshot.getChildren()) {
+                                    if(i >= 2){break;}
+                                    HashMap<String, String> temp = (HashMap<String, String>) ds.getValue();
+                                    Log.d("Test message", "We are" + temp.toString());
+
+//                                    values[i++] = new Users(temp.get("Name"), temp.get("Personality"), temp.get("Surname"));
+                                    values[i] = temp.toString();
+                                    i++;
                                 }
+
+                                setContentView(R.layout.final_results);
+                                tvBox1 = findViewById(R.id.textView5);
+                                tvBox2 = findViewById(R.id.textView6);
+//
+                                tvBox1.setText(values[0]);
+                                tvBox2.setText(values[1]);
+
+
                             }
 
                             @Override
                             public void onCancelled(@NonNull DatabaseError databaseError) {
 
                             }
-                        };
-                        myRef.addValueEventListener(event);
+                        });
+
+//                        Toast.makeText(v.getContext(), values[0],Toast.LENGTH_LONG).show();
                         //Call Match
                         //Display Results screen
-                        setContentView(R.layout.final_results);
-
+//                        setContentView(R.layout.final_results);
+//                        tvBox1 = findViewById(R.id.textView5);
+//                        tvBox2 = findViewById(R.id.textView6);
+//
+//                        tvBox1.setText(match1[0].toString());
+//                        tvBox2.setText(match1[1].toString());
                     }
                 default:
                     break;
             }
+        }
+    }
+
+    public class Users {
+        public String name;
+        public String personality;
+        public String surname;
+
+        public Users(){}
+
+        public Users(String name, String personality, String surname){
+            this.name = name;
+            this.personality = personality;
+            this.surname = surname;
+        }
+
+        @Override
+        public String toString() {
+            return  "name='" + name + '\n' +
+                    ", surname='" + surname + '\n' +
+                    ", personality='" + personality + '\n';
         }
     }
 }
