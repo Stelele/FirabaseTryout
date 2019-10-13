@@ -14,12 +14,13 @@
     <string-array name="options">
         <item>Select Answer</item>
         <item>2</item>
-        <item>I don not know</item>
+        <item>I do not know</item>
         <item>It depends</item>
         <item>9</item>
         <item>12</item>
         <item>0</item>
-        <item>Just Skip</item>
+        <item>Really</item>
+
     </string-array>
 
     <string-array name="options_traffic">
@@ -27,6 +28,7 @@
         <item>Wait for Green</item>
         <item>Check for cops then continue</item>
         <item>Drive faster</item>
+        <item>Ignore and Continue</item>
     </string-array>
 
 
@@ -40,10 +42,10 @@
         <item>Select Box</item>
         <item>Both</item>
         <item>No one</item>
-        <item>The audience</item>
+        <item>The Audience</item>
         <item>Myself</item>
         <item>None of the above</item>
-        <item>I do not know</item>
+        <item>I do not Know</item>
     </string-array>
 
     <string-array name="scenesecond_2">
