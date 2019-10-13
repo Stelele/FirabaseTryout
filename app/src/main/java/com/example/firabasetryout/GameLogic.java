@@ -1,5 +1,6 @@
 package com.example.firabasetryout;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -7,6 +8,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 public class GameLogic extends AppCompatActivity {
 
@@ -69,7 +77,7 @@ public class GameLogic extends AppCompatActivity {
     private class ButtonClickListener implements View.OnClickListener{
 
         @Override
-        public void onClick(View v){
+        public void onClick(final View v){
             switch (v.getId()){
                 case R.id.btn_proceed:
                     // Proceed on the first scenario clicked
@@ -106,7 +114,38 @@ public class GameLogic extends AppCompatActivity {
                         //Call personality test
                         test.update(text_3);
                         //Toast to the display the results
-                        Toast.makeText(v.getContext(), test.getMax(), Toast.LENGTH_LONG).show();
+//                        Toast.makeText(v.getContext(), test.getMax(), Toast.LENGTH_LONG).show();
+
+                        FirebaseDatabase database = FirebaseDatabase.getInstance();
+                        DatabaseReference myRef = database.getReference("PersonalityMatch");
+
+                        String tempId = myRef.push().getKey();
+
+//                        myRef.child("Mentee").child(tempId).setValue("Susan");
+
+//                        Query check = myRef.child("PersonalityMatch").equalTo(test.getMax());
+//
+//                        Toast.makeText(v.getContext(),check.toString(),Toast.LENGTH_LONG).show();
+                        final String yourPersonality = test.getMax();
+                        ValueEventListener event = new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                for (DataSnapshot ds : dataSnapshot.getChildren()){
+                                    String word = ds.getKey();
+                                    String out = " u r " + test.getMax() + " we match at " + word;
+                                    if(word.equals(yourPersonality)){
+                                        Toast.makeText(v.getContext(),out,Toast.LENGTH_LONG).show();
+                                    }
+
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                            }
+                        };
+                        myRef.addValueEventListener(event);
                         //Call Match
                     }
                 default:
