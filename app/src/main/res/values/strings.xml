@@ -10,6 +10,7 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="gif_prompt">What do you do?</string>
+    <string name="final_msg">Congratulations!!!These two mentors are your best matches the year!!!Choose your best fit!!</string>
 
     <string-array name="options">
         <item>Select Answer</item>

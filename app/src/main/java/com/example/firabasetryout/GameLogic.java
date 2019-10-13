@@ -69,6 +69,7 @@ public class GameLogic extends AppCompatActivity {
      * */
     public void getMatches(){
         //Get matches after the final proceed button hav been clicked
+
     }
 
     /**
@@ -147,6 +148,9 @@ public class GameLogic extends AppCompatActivity {
                         };
                         myRef.addValueEventListener(event);
                         //Call Match
+                        //Display Results screen
+                        setContentView(R.layout.final_results);
+
                     }
                 default:
                     break;
