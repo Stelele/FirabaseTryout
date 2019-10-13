@@ -29,20 +29,20 @@ public class PersonalityTest {
          String opt4 = input.nextLine();**/
 
         switch (option) {
-            case "Twelve":
+            case "12":
                 array[3] += 3;
                 array[5] += 3;
                 break;
-            case "Two":
+            case "2":
                 array[4] += 6;
                 break;
-            case "I dont know":
+            case "I do not know":
                 array[7] += 6;
                 break;
             case "Really":
                 array[7] += 6;
                 break;
-            case "Zero":
+            case "0":
                 array[7] += 6;
                 break;
             case "It depends":
@@ -51,21 +51,21 @@ public class PersonalityTest {
             case "Both":
                 array[0] += 6;
                 break;
-            case "None":
+            case "No one":
                 array[1] += 6;
                 break;
             case "The Audience":
                 array[4] += 3;
                 array[8] += 3;
                 break;
-            case "You":
+            case "Myself":
                 array[2] += 3;
                 array[3] += 3;
                 break;
             case "None of the above":
                 array[7] += 3;
                 break;
-            case "I don't know":
+            case "I do not Know":
                 array[5] += 3;
                 break;
             case "Cry":
@@ -90,12 +90,12 @@ public class PersonalityTest {
             case "Show them a magic trick":
                 array[7] += 6;
                 break;
-            case "Wait for green":
+            case "Wait for Green":
                 array[1] += 2;
                 array[6] += 2;
                 array[2] += 2;
                 break;
-            case "Check for police then continue":
+            case "Check for cops then continue":
                 array[0] += 6;
                 break;
             case "Ignore and continue":
